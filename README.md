@@ -1,0 +1,1 @@
+# Kotlin based maven template
