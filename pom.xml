@@ -17,7 +17,7 @@
     <!--
         configuration
     -->
-    <skip.surefire.tests>true</skip.surefire.tests>
+    <skip.surefire.tests>false</skip.surefire.tests>
     <kotlin.version>1.9.0</kotlin.version>
     <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
     <!--
@@ -49,6 +49,11 @@
     <!--
         test
     -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <scope>test</scope>
+    </dependency>
     <!-- append -->
   </dependencies>
 
