@@ -38,8 +38,28 @@ class Solution {
   }
 }
 
-
 class TreeNode(var `val`: Int) {
   var left: TreeNode? = null
   var right: TreeNode? = null
+}
+
+class A {
+  private var result = 0
+
+  private fun dfs(root: TreeNode?, max: Int) {
+    if (null == root) return
+    if (root.`val` >= max) {
+      this.result++
+    }
+    this.dfs(root.left, max(max, root.`val`))
+    this.dfs(root.right, max(max, root.`val`))
+  }
+
+  fun goodNodes(root: TreeNode?): Int {
+    this.result = 0
+
+    this.dfs(root, Int.MIN_VALUE)
+
+    return this.result
+  }
 }
