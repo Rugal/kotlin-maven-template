@@ -9,6 +9,12 @@ class Solution {
   private fun add(root: TreeNode?) {
     if (null == root) return
 
+    if (null == root.left && null == root.right) {
+      g.inDegree[root] = 0
+      g.adjacency.putIfAbsent(root, LinkedList<TreeNode>())
+      return
+    }
+    
     // add adjacency if has child
     root.left?.let { g.add(it, root) }
     root.right?.let { g.add(it, root) }
