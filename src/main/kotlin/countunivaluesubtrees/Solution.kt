@@ -8,22 +8,24 @@ class Solution {
 
   private fun TreeNode.isLeaf(): Boolean = this.left == null && this.right == null
 
-  private fun dfs(root: TreeNode?): Pair<Int, Boolean> {
-    if (null == root) return 0 to true
-    
+  /**
+   * @return if current node forms uniValue
+   */
+  private fun dfs(root: TreeNode?): Boolean {
+    if (null == root) return true
+
     val left = this.dfs(root.left)
     val right = this.dfs(root.right)
-    // only if both subtree are univalue and they are equals to this node value as well
-    val uniValue = left.second
-      && right.second
-      && (left.first == root.`val` || root.left == null)   // either equal or null
-      && (right.first == root.`val` || root.right == null) // either equal or null
+    // only if both subtree are uniValue and they are equals to this node value as well
+    val uniValue = left && right
+      && (root.left == null || root.left!!.`val` == root.`val`)   // either equal or null
+      && (root.right == null || root.right!!.`val` == root.`val`) // either equal or null
 
     if (uniValue) {
       this.result++
     }
 
-    return root.`val` to uniValue
+    return uniValue
   }
 
   /**
