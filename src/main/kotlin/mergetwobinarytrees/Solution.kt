@@ -2,6 +2,9 @@ package mergetwobinarytrees
 
 import countgoodnodesinbinarytree.TreeNode
 
+/**
+ * https://leetcode.com/problems/merge-two-binary-trees/description/
+ */
 class Solution {
   fun mergeTrees(root1: TreeNode?, root2: TreeNode?): TreeNode? {
     if (null == root1 && null == root2) return null
