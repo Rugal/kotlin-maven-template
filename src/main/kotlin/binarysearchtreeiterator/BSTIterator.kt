@@ -1,0 +1,31 @@
+package binarysearchtreeiterator
+
+import java.util.Stack
+import countgoodnodesinbinarytree.TreeNode
+
+class BSTIterator(root: TreeNode?) {
+
+  private val s = Stack<TreeNode>()
+
+  init {
+    this.moveLeft(root)
+  }
+
+  private fun moveLeft(root: TreeNode?) {
+    var current: TreeNode? = root
+    while (null != current) {
+      s.push(current)
+      current = current.left
+    }
+  }
+
+  fun next(): Int {
+    val node = this.s.pop()
+
+    this.moveLeft(node.right)
+
+    return node.`val`
+  }
+
+  fun hasNext(): Boolean = this.s.isNotEmpty()
+}
