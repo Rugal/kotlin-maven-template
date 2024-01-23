@@ -18,7 +18,7 @@ class Solution {
     val map = mutableMapOf<Pair<Int, Int>, Boolean>()
 
     /**
-     * @param remain to remaining length to fulfill
+     * @param remain the remaining length to fulfill
      * @param bitmask current stick usage in bitmask format
      */
     fun solve(index: Int, remain: Int, bitmask: Int): Boolean {
