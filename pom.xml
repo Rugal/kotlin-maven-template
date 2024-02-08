@@ -18,14 +18,12 @@
         configuration
     -->
     <skip.surefire.tests>false</skip.surefire.tests>
-    <kotlin.compiler.incremental>true</kotlin.compiler.incremental>
     <!--
         dependency version
     -->
     <!--
         plugin version
     -->
-    <detekt.plugin.version>1.23.1</detekt.plugin.version>
   </properties>
 
   <dependencies>
