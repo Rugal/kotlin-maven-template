@@ -2,6 +2,9 @@ package maxconsecutiveonesiii
 
 import kotlin.math.max
 
+/**
+ * https://leetcode.com/problems/max-consecutive-ones-iii
+ */
 class Solution {
   fun longestOnes(nums: IntArray, k: Int): Int {
     var result = 0
