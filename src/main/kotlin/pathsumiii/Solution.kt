@@ -20,7 +20,8 @@ class Solution {
               5
       4..5 == 1..5 - 1..3
       sub path  ==  full path - prefix
-      当前路径减去前缀 就是中间一段，如果能够找到，说明中间这一段的和就等于sum，因此需要加上前缀的个数
+      当前路径减去前缀 就是中间一段
+      如果能够找到，说明中间这一段的和就等于sum，因此，只要前缀有几个，就可以计入计数
      */
     this.result += this.cache.getOrDefault(current - target, 0)
     // setup backtrack

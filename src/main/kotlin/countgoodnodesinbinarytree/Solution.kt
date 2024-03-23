@@ -3,6 +3,8 @@ package countgoodnodesinbinarytree
 import kotlin.math.max
 
 /**
+ * https://leetcode.com/problems/count-good-nodes-in-binary-tree
+ *
  * Example:
  * var ti = TreeNode(5)
  * var v = ti.`val`

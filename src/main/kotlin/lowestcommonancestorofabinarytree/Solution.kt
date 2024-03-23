@@ -20,10 +20,9 @@ class Solution {
     // if any node is the current node
     val mid = if (p == root || q == root) 1 else 0
     // if any node is at left tree
-    val left = if (dfs(root.left, p, q)) 1 else 0
+    val left = if (this.dfs(root.left, p, q)) 1 else 0
     // if any node is at right tree
-    val right = if (dfs(root.right, p, q)) 1 else 0
-    
+    val right = if (this.dfs(root.right, p, q)) 1 else 0
     val count = mid + left + right
     if (count > 1) {
       /*
