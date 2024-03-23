@@ -4,6 +4,9 @@ import java.util.LinkedList
 import java.util.Queue
 import countgoodnodesinbinarytree.TreeNode
 
+/**
+ * https://leetcode.com/problems/maximum-level-sum-of-a-binary-tree
+ */
 class Solution {
   fun maxLevelSum(root: TreeNode): Int {
     val q: Queue<TreeNode> = LinkedList()
