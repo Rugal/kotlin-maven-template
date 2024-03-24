@@ -23,7 +23,7 @@ class Solution : GuessGame() {
     var left = 1
     var right = n
     while (left <= right) {
-      val mid = left + (right - left) / 2
+      val mid = left + (right - left) / 2 // mind overflow
       if (0 == this.guess(mid)) return mid
 
       if (0 < this.guess(mid)) {
