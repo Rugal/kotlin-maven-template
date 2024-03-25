@@ -7,14 +7,16 @@ import kotlin.math.min
  */
 class Solution {
   fun minCostClimbingStairs(cost: IntArray): Int {
-    val dp = IntArray(cost.size) { Int.MAX_VALUE }
-    dp[cost.size - 1] = cost[cost.size - 1]
-    dp[cost.size - 2] = cost[cost.size - 2]
+    val dp = IntArray(2)
+    dp[1] = cost[cost.size - 1]
+    dp[0] = cost[cost.size - 2]
 
     for (i in cost.size - 3 downTo 0) {
-      dp[i] = cost[i] + min(dp[i + 1], dp[i + 2])
+      val temp = cost[i] + min(dp[0], dp[1])
+      dp[1] = dp[0]
+      dp[0] = temp
     }
-    
+
     return min(dp[0], dp[1])
   }
 }
