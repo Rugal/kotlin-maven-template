@@ -5,20 +5,20 @@ import org.junit.jupiter.api.Test
 
 class SolutionTest {
   val s = Solution()
-  private val root = RugalDirectedGraphNode(1).also {
-    it.neighbors.add(RugalDirectedGraphNode(2).also {
-      it.neighbors.add(RugalDirectedGraphNode(5))
+  private val root = DirectedGraphNode(1).also {
+    it.neighbors.add(DirectedGraphNode(2).also {
+      it.neighbors.add(DirectedGraphNode(5))
     })
-    it.neighbors.add(RugalDirectedGraphNode(3))
-    it.neighbors.add(RugalDirectedGraphNode(4).also {
-      it.neighbors.add(RugalDirectedGraphNode(6).also {
-        it.neighbors.add(RugalDirectedGraphNode(9))
-        it.neighbors.add(RugalDirectedGraphNode(10))
-        it.neighbors.add(RugalDirectedGraphNode(11))
+    it.neighbors.add(DirectedGraphNode(3))
+    it.neighbors.add(DirectedGraphNode(4).also {
+      it.neighbors.add(DirectedGraphNode(6).also {
+        it.neighbors.add(DirectedGraphNode(9))
+        it.neighbors.add(DirectedGraphNode(10))
+        it.neighbors.add(DirectedGraphNode(11))
       })
-      it.neighbors.add(RugalDirectedGraphNode(7))
+      it.neighbors.add(DirectedGraphNode(7))
     })
-    it.neighbors.add(RugalDirectedGraphNode(8))
+    it.neighbors.add(DirectedGraphNode(8))
   }
 
   //  @Disabled

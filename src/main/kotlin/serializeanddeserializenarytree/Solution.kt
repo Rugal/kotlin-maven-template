@@ -1,6 +1,8 @@
 package serializeanddeserializenarytree
 
 /**
+ * https://leetcode.com/problems/serialize-and-deserialize-n-ary-tree
+ * 
  * Definition for Directed graph.
  * class DirectedGraphNode {
  *     int label;
@@ -9,18 +11,18 @@ package serializeanddeserializenarytree
  * };
  */
 class Solution {
-  fun serialize(root: RugalDirectedGraphNode?): String =
+  fun serialize(root: DirectedGraphNode?): String =
     if (null == root) ""
     else "${root.label}" + (if (root.neighbors.isNotEmpty()) root.neighbors.joinToString(separator = " ", prefix = "[", postfix = "]", transform = this::serialize) else "[]")
 
   /**
    * 1[2[5[]] 3[] 4[6[] 7[]]]
    */
-  fun deserialize(data: String): RugalDirectedGraphNode {
+  fun deserialize(data: String): DirectedGraphNode {
     // detecting label until [, ] or end of string
     // parse the label
     val firstIndex = data.indexOfFirst { it == '[' }
-    val root = RugalDirectedGraphNode(data.substring(0, firstIndex).toInt())
+    val root = DirectedGraphNode(data.substring(0, firstIndex).toInt())
     // detecting neighbors using stack(multiple level), for each element, repeat
     var start = firstIndex + 1
     var bracket = 0
@@ -45,7 +47,7 @@ class Solution {
   }
 }
 
-class RugalDirectedGraphNode(x: Int) {
+class DirectedGraphNode(x: Int) {
   val label: Int = x
-  val neighbors = mutableListOf<RugalDirectedGraphNode>()
+  val neighbors = mutableListOf<DirectedGraphNode>()
 }
