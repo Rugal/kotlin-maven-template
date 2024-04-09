@@ -7,9 +7,7 @@ import java.util.LinkedList
  */
 class Solution {
   fun findMinHeightTrees(n: Int, edges: Array<IntArray>): List<Int> {
-    if (1 == n) {
-      return listOf(0)
-    }
+    if (1 == n) return listOf(0)
 
     val g = Graph(n)
     for (e in edges) g.add(e[0], e[1])
@@ -18,6 +16,7 @@ class Solution {
 
     var result = mutableListOf<Int>()
     while (queue.isNotEmpty()) {
+      // BFS
       val size = queue.size
       // reset result for each level until the last one, as it will not be reset anymore
       result = mutableListOf()
@@ -49,11 +48,8 @@ private class Graph(n: Int) {
     this.inDegree[to]++
     this.inDegree[from]++
 
-    this.adjacency.putIfAbsent(from, LinkedList<Int>())
-    this.adjacency[from]!!.add(to)
+    this.adjacency.computeIfAbsent(from) { LinkedList<Int>() }.add(to)
 
-    this.adjacency.putIfAbsent(to, LinkedList<Int>())
-    this.adjacency[to]!!.add(from)
+    this.adjacency.computeIfAbsent(to) { LinkedList<Int>() }.add(from)
   }
 }
-

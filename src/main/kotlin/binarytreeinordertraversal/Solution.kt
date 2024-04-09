@@ -15,6 +15,7 @@ class Solution {
     val s = Stack<TreeNode>()
     var root = root
 
+    // iterative way of DFS
     while (null != root || s.isNotEmpty()) {
       while (null != root) {
         s.push(root)
