@@ -3,6 +3,9 @@ package increasingordersearchtree
 import java.util.Stack
 import countgoodnodesinbinarytree.TreeNode
 
+/**
+ * https://leetcode.com/problems/increasing-order-search-tree/
+ */
 class Solution {
 
   private val s = Stack<TreeNode>()
@@ -21,11 +24,13 @@ class Solution {
 
     this.s.clear()
     this.dfs(root)
-
+    // smallest number at the top
     return this.s.pop().also {
       var current = it
+      println(it.`val`)
       while (this.s.isNotEmpty()) {
         current.right = this.s.pop()
+        println(current.right!!.`val`)
         current = current.right
         current.left = null
         current.right = null

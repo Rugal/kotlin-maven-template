@@ -4,6 +4,9 @@ import java.util.LinkedList
 import kotlin.math.max
 import countgoodnodesinbinarytree.TreeNode
 
+/**
+ * https://leetcode.com/problems/maximum-width-of-binary-tree
+ */
 class Solution {
 
   fun widthOfBinaryTree(root: TreeNode?): Int {

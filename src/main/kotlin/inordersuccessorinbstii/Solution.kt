@@ -13,7 +13,7 @@ class Solution {
   fun inorderSuccessor(node: Node?): Node? {
     if (null == node) return null
 
-    var result: Node? = null
+    var result: Node?
     if (null != node.right) {
       result = node.right
       while (null != result!!.left) {
@@ -23,7 +23,7 @@ class Solution {
     }
 
     var node = node
-    while (null != node!!.parent          // parent is not null
+    while (null != node!!.parent     // parent is not null
       && node.parent!!.right == node // parent is smaller(current is right subtree of parent)
     ) {
       node = node.parent //climb along parent path

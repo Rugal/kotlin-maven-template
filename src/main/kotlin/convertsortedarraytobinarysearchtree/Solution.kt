@@ -2,6 +2,9 @@ package convertsortedarraytobinarysearchtree
 
 import countgoodnodesinbinarytree.TreeNode
 
+/**
+ * https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+ */
 class Solution {
   private fun dc(nums: IntArray, begin: Int, end: Int): TreeNode? {
     if (begin > end) return null

@@ -8,6 +8,9 @@ class Node(var `val`: Int) {
   var next: Node? = null
 }
 
+/**
+ * https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/description/
+ */
 class SolutionQueue {
   fun connect(root: Node?): Node? {
     if (null == root) return null

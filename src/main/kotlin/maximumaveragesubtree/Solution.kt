@@ -6,6 +6,7 @@ import countgoodnodesinbinarytree.TreeNode
 /**
  * https://leetcode.com/problems/maximum-average-subtree/description/
  */
+@Suppress("DuplicatedCode")
 class Solution {
 
   private var result = 0.0

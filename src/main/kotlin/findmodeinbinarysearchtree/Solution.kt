@@ -3,6 +3,9 @@ package findmodeinbinarysearchtree
 import kotlin.math.max
 import countgoodnodesinbinarytree.TreeNode
 
+/**
+ * https://leetcode.com/problems/find-mode-in-binary-search-tree/
+ */
 class Solution {
 
   private var currentValue = Int.MAX_VALUE

@@ -12,7 +12,7 @@ class Solution {
   private fun dfs(root: TreeNode?) {
     if (null == root) return
 
-    queue.offer(root)
+    queue.offer(root) // pre-order visitation
     this.dfs(root.left)
     this.dfs(root.right)
   }

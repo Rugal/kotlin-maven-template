@@ -85,15 +85,12 @@ class Solution {
 
     if (foundLeft) return
     left = root
-    
     this.findLeft(root.right)
   }
 
-  fun recoverTree(root: TreeNode?): Unit {
+  fun recoverTree(root: TreeNode?) {
     this.findRight(root)
-//    println(this.right!!.`val`)
     this.findLeft(root)
-//    println(this.left!!.`val`)
 
     val temp = this.right!!.`val`
     this.right!!.`val` = this.left!!.`val`

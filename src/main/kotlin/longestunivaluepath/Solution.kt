@@ -3,6 +3,9 @@ package longestunivaluepath
 import kotlin.math.max
 import countgoodnodesinbinarytree.TreeNode
 
+/**
+ * https://leetcode.com/problems/longest-univalue-path
+ */
 class Solution {
   private var result = 0
 
@@ -24,7 +27,7 @@ class Solution {
     // in case of uniValue path formed at root subtree
     this.result = max(this.result, leftCount + rightCount)
     // but must return only one path, otherwise would form graph
-    return max(leftCount, rightCount)
+    return max(leftCount, rightCount) // we count path, not the number of node
   }
 
   fun longestUnivaluePath(root: TreeNode?): Int {

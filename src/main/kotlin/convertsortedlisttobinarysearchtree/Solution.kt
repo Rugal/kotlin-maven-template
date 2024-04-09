@@ -7,7 +7,15 @@ data class ListNode(
   var next: ListNode? = null,
 )
 
+/**
+ * https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree
+ */
 class Solution {
+
+  /**
+   * Divide and conquer.
+   * Divide list into 2 part by fast-slow pointer.
+   */
   fun sortedListToBST(head: ListNode?): TreeNode? {
     var root: TreeNode? = null
     if (null == head) return root

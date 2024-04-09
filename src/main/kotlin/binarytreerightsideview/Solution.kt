@@ -2,6 +2,9 @@ package binarytreerightsideview
 
 import countgoodnodesinbinarytree.TreeNode
 
+/**
+ * https://leetcode.com/problems/binary-tree-right-side-view/
+ */
 class Solution {
   private val result = mutableListOf<Int>()
   private var maxLevel = -1

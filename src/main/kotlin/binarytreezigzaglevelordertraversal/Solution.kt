@@ -24,7 +24,7 @@ class Solution {
           l.addLast(poll.`val`)
         } else {
           l.addFirst(poll.`val`)
-        }
+        } 
       }
 
       left2Right = !left2Right

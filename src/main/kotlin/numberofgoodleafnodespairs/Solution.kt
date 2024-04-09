@@ -34,6 +34,7 @@ class Solution {
     val left = this.dfs(root.left)
     val right = this.dfs(root.right)
 
+    // add to result for those matching combination
     for (i in 1 until distance) {
       for (j in 1 until distance) {
         if (i + j <= distance) {
@@ -45,7 +46,7 @@ class Solution {
 
     // prepare for parent level
     for (i in 1..distance) {
-      // add 1 more level
+      // for parent level, increase distance by 1
       r[i] = left[i - 1] + right[i - 1]
     }
 

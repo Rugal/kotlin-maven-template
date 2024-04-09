@@ -7,13 +7,16 @@ data class UndirectedGraphNode(
   var neighbors: MutableList<UndirectedGraphNode> = mutableListOf()
 )
 
+/**
+ * https://leetcode.com/problems/diameter-of-n-ary-tree
+ */
 class Solution {
   private var result = 0
 
   private fun getDepth1(node: UndirectedGraphNode?): Int {
     if (null == node) return 0
 
-    val take: List<Int> = node.neighbors
+    return node.neighbors
       .map { this.getDepth1(it) }
       .toMutableList()
       .also {
@@ -21,10 +24,10 @@ class Solution {
         it.add(0)
       }
       .sortedDescending()
-      .take(2)
-
-    this.result = max(this.result, take[0] + take[1])
-    return take[0] + 1
+      .take(2).let {
+        this.result = max(this.result, it[0] + it[1])
+        it[0] + 1
+      }
   }
 
   private fun getDepth(node: UndirectedGraphNode?): Int {

@@ -2,10 +2,16 @@ package finddistanceinabinarytree
 
 import countgoodnodesinbinarytree.TreeNode
 
+/**
+ * https://leetcode.com/problems/find-distance-in-a-binary-tree
+ */
 class Solution {
-  fun findDistance(root: TreeNode?, p: Int, q: Int): Int {
-    return Path().getDirections(root, p, q).length
-  }
+
+  /**
+   * Similar to https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another/description/
+   * But only need the distance.
+   */
+  fun findDistance(root: TreeNode?, p: Int, q: Int): Int = Path().getDirections(root, p, q).length
 }
 
 @Suppress("DuplicatedCode")

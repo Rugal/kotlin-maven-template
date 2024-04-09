@@ -4,7 +4,7 @@ import kotlin.math.max
 import countgoodnodesinbinarytree.TreeNode
 
 /**
- * <a href="https://leetcode.com/problems/binary-tree-maximum-path-sum/">leetcode</a>
+ * https://leetcode.com/problems/binary-tree-maximum-path-sum
  */
 class Solution {
   private var result = 0

@@ -2,6 +2,9 @@ package binarytreepruning
 
 import countgoodnodesinbinarytree.TreeNode
 
+/**
+ * https://leetcode.com/problems/binary-tree-pruning
+ */
 class Solution {
 
   private fun TreeNode.isLeaf(): Boolean = this.left == null && this.right == null

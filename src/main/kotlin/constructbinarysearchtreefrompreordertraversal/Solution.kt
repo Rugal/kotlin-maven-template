@@ -2,6 +2,9 @@ package constructbinarysearchtreefrompreordertraversal
 
 import countgoodnodesinbinarytree.TreeNode
 
+/**
+ * https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/
+ */
 class Solution {
   private var preorder: IntArray = intArrayOf()
 
@@ -10,7 +13,7 @@ class Solution {
     // the left most element is the root value
     val root = TreeNode(this.preorder[left])
 
-    // find the mid value that divide this subarray into 2 parts
+    // find the mid-value that divide this sub-array into 2 parts
     var mid = -1
     for (i in left..right) {
       mid = i
@@ -19,7 +22,7 @@ class Solution {
         break
       }
     }
-    
+
     if (-1 != mid) {
       // find left subtree part
       // left -> mid

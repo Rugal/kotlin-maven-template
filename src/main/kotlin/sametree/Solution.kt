@@ -2,6 +2,9 @@ package sametree
 
 import countgoodnodesinbinarytree.TreeNode
 
+/**
+ * https://leetcode.com/problems/same-tree/
+ */
 class Solution {
   fun isSameTree(p: TreeNode?, q: TreeNode?): Boolean {
     if (null == p && null == q) return true

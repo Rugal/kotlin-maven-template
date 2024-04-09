@@ -1,10 +1,10 @@
-package smallestsubtreewithallthedeepestnodes
+package lowestcommonancestorofdeepestleaves
 
 import kotlin.math.max
 import countgoodnodesinbinarytree.TreeNode
 
 /**
- * https://leetcode.com/problems/smallest-subtree-with-all-the-deepest-nodes/
+ * https://leetcode.com/problems/lowest-common-ancestor-of-deepest-leaves/
  */
 class Solution {
 
@@ -28,8 +28,8 @@ class Solution {
       }
     }
   }
-
-  fun subtreeWithAllDeepest(root: TreeNode?): TreeNode? {
+  
+  fun lcaDeepestLeaves(root: TreeNode?): TreeNode? {
     this.result = null
     this.maxDepth = 0
 

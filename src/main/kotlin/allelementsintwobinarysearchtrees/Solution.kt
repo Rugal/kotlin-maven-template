@@ -3,6 +3,9 @@ package allelementsintwobinarysearchtrees
 import java.util.Stack
 import countgoodnodesinbinarytree.TreeNode
 
+/**
+ * https://leetcode.com/problems/all-elements-in-two-binary-search-trees/
+ */
 class Solution {
   private val result = mutableListOf<Int>()
 
@@ -28,9 +31,11 @@ class Solution {
     val stack1 = Stack<TreeNode>()
     val stack2 = Stack<TreeNode>()
 
+    // iterative in-order traverse
     while (null != root1 || stack1.isNotEmpty()
       || null != root2 || stack2.isNotEmpty()
     ) {
+      // move to left child as deep as possible
       while (null != root1) {
         stack1.push(root1)
         root1 = root1.left
@@ -44,8 +49,10 @@ class Solution {
       if (stack2.isEmpty()
         || stack1.isNotEmpty() && stack1.peek().`val` <= stack2.peek().`val`
       ) {
+        // in-order visitation
         root1 = stack1.pop()
         result.add(root1.`val`)
+        // move to right child a bit
         root1 = root1.right
       } else {
         root2 = stack2.pop()

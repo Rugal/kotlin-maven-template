@@ -8,9 +8,9 @@ import countgoodnodesinbinarytree.TreeNode
 class Solution {
   fun dfs(root: TreeNode?, small: TreeNode, big: TreeNode): TreeNode? {
     if (null == root) return null
-    if (root.`val` < small.`val`) return this.dfs(root.right, small, big)
-    if (big.`val` < root.`val`) return this.dfs(root.left, small, big)
-    return root
+    if (root.`val` < small.`val`) return this.dfs(root.right, small, big) // both at right subtree
+    if (big.`val` < root.`val`) return this.dfs(root.left, small, big) // both at left subtree
+    return root // one at left, one at right. hence this root is the LCA
   }
 
   fun lowestCommonAncestor(root: TreeNode, p: TreeNode?, q: TreeNode?): TreeNode? {

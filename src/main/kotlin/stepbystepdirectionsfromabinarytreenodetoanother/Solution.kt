@@ -5,13 +5,18 @@ import countgoodnodesinbinarytree.TreeNode
 /**
  * https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another/
  */
+@Suppress("DuplicatedCode")
 class Solution {
   private val sb = StringBuilder()
 
+  /**
+   * From root to target value node
+   */
   private fun dfs(root: TreeNode?, value: Int): Boolean {
     if (null == root) return false
     if (root.`val` == value) return true
 
+    // use backtrack to find path to target value
     sb.append("L")
     if (this.dfs(root.left, value)) return true
     sb.deleteCharAt(sb.length - 1)

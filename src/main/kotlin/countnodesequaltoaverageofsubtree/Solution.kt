@@ -2,6 +2,10 @@ package countnodesequaltoaverageofsubtree
 
 import countgoodnodesinbinarytree.TreeNode
 
+/**
+ * https://leetcode.com/problems/count-nodes-equal-to-average-of-subtree
+ */
+@Suppress("DuplicatedCode")
 class Solution {
   private var result = 0
 
@@ -16,9 +20,7 @@ class Solution {
     val sum = left.first + right.first + root.`val`
     val count = left.second + right.second + 1
 
-    if (sum / count == root.`val`) {
-      this.result++
-    }
+    if (sum / count == root.`val`) this.result++
 
     return sum to count
   }

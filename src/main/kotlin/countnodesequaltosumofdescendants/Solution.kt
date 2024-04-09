@@ -14,9 +14,7 @@ class Solution {
     val left = this.dfs(root.left)
     val right = this.dfs(root.right)
 
-    if (left + right == root.`val`) {
-      this.result++
-    }
+    if (left + right == root.`val`) this.result++
 
     return left + right + root.`val`
   }

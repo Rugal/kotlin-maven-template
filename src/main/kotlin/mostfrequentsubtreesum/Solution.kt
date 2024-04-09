@@ -1,7 +1,11 @@
 package mostfrequentsubtreesum
 
+import kotlin.math.max
 import countgoodnodesinbinarytree.TreeNode
 
+/**
+ * https://leetcode.com/problems/most-frequent-subtree-sum
+ */
 class Solution {
   private val map = mutableMapOf<Int, Int>()
   private var highest = 0
@@ -14,17 +18,12 @@ class Solution {
     val left = this.dfs(root.left)
     val right = this.dfs(root.right)
 
-    val sum = left + right + root.`val`
-    // initialize if not found before
-    this.map.putIfAbsent(sum, 0)
-    // increment by one
-    this.map[sum] = this.map[sum]!! + 1
-    // update highest
-    if (this.map[sum]!! > this.highest) {
-      this.highest = this.map[sum]!!
+    return (left + right + root.`val`).also {
+      // initialize if not found before
+      this.map[it] = this.map.getOrDefault(it, 0) + 1
+      // update highest
+      this.highest = max(this.highest, this.map[it]!!)
     }
-
-    return sum
   }
 
   fun findFrequentTreeSum(root: TreeNode?): IntArray {

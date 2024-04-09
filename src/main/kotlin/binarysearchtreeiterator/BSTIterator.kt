@@ -3,6 +3,9 @@ package binarysearchtreeiterator
 import java.util.Stack
 import countgoodnodesinbinarytree.TreeNode
 
+/**
+ * https://leetcode.com/problems/binary-search-tree-iterator/
+ */
 class BSTIterator(root: TreeNode?) {
 
   private val s = Stack<TreeNode>()
@@ -11,6 +14,9 @@ class BSTIterator(root: TreeNode?) {
     this.moveLeft(root)
   }
 
+  /**
+   * iterative way to in-order traverse.  
+   */
   private fun moveLeft(root: TreeNode?) {
     var current: TreeNode? = root
     while (null != current) {

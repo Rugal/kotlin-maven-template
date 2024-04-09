@@ -16,9 +16,5 @@ class Solution {
       && this.dfs(left.right, right.left)
   }
 
-  fun isSymmetric(root: TreeNode?): Boolean {
-    if (null == root) return true
-
-    return this.dfs(root.left, root.right)
-  }
+  fun isSymmetric(root: TreeNode?): Boolean = if (null == root) true else this.dfs(root.left, root.right)
 }
