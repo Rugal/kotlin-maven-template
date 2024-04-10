@@ -46,6 +46,9 @@ class Solution {
     return -1.0
   }
 
+  /**
+   * It is basically a graph reachability problem. Create directed graph.
+   */
   fun calcEquation(equations: List<List<String>>, values: DoubleArray, queries: List<List<String>>): DoubleArray {
     val g: Map<String, Map<String, Double>> = this.build(equations, values)
     return queries.map { this.query(g, it) }.toDoubleArray()
