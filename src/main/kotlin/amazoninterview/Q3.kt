@@ -47,49 +47,42 @@ recordDeployment("Package1")
 // method to record the deployment 
 //
 
-@NoArgsConstructor
-@Data
-class Key {
-  String name;
-  Key next, prev;
-  Frequency parent;
-}
-
-@NoArgsConstructor
-@Data
-class Frequency {
-  int count;
-  Key start, end;
-  Frequency parent;
-
-  public Frequency(int )
-}
-
-class MostFrequentDeployedPackageCache {
-  Map<String, Key> map = new HashMap<>()
-  int size = 0, capacity = 0;
-  Frequency start, end;
-
-  public MostFrequentDeployedPackageCache(int capacity) {
-    this.capacity = capacity;
-    start = new Frequency()
-  }
-
-  public void recordDeployment(String name) {
-    Key key = null;
-    if (this.map.contains(name)) {
-      key = this.map.get(name);
-    } else if (size < capacity) {
-      key = new Key(name, start);
-    }
-  }
-
-  public List<String> getTop100Deployments() {}
-}
-
-
-
-
-
-
-
+//@NoArgsConstructor
+//@Data
+//class Key {
+//  String name;
+//  Key next, prev;
+//  Frequency parent;
+//}
+//
+//@NoArgsConstructor
+//@Data
+//class Frequency {
+//  int count;
+//  Key start, end;
+//  Frequency parent;
+//
+//  public Frequency(int )
+//}
+//
+//class MostFrequentDeployedPackageCache {
+//  Map<String, Key> map = new HashMap<>()
+//  int size = 0, capacity = 0;
+//  Frequency start, end;
+//
+//  public MostFrequentDeployedPackageCache(int capacity) {
+//    this.capacity = capacity;
+//    start = new Frequency()
+//  }
+//
+//  public void recordDeployment(String name) {
+//    Key key = null;
+//    if (this.map.contains(name)) {
+//      key = this.map.get(name);
+//    } else if (size < capacity) {
+//      key = new Key(name, start);
+//    }
+//  }
+//
+//  public List<String> getTop100Deployments() {}
+//}

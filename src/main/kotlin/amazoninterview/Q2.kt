@@ -29,49 +29,49 @@ class Q2 {
 // getLeastActiveUsers(); should return john
 
 
-data class Login(
-  name: String,
-  time: Long = Instant.now().epochSecond,
-)
-
-class LeastActiveUserAnalyzer {
-
-  val logins = mutableListOf<Login>()
-
-  private fun dropExpired() {
-    // drop those that expired(more than 24H)
-    val expired = Instant.now().epochSecond - 24 * 60 * 60 // oldest epoch second that is yet to expire
-    for(item in this.logins) {
-      if(item.time < expired) {
-        this.logins.remove(item)
-      } else {
-        break
-      }
-    }
-  }
-
-  fun newUserLogin(name: String) {
-    dropExpired()
-    // add new login
-    this.logins += Login(name)
-  }
-
-  fun getLeastActiveUsers(): List<String> {
-    dropExpired()
-    val map = mutableMapOf<String, Int>()
-    // count how many logins for each name
-    for(item in this.logins) {
-      map[item.name] = map.getOrDefault(item.name, 0) + 1
-    }
-    // sort the entry pair by count in ascending order
-    val sorted: List<Entry<String, Int>> = map.entries.sortBy(it.value) // FIXME: O(n^2)
-    val count = sorted[0].value
-    val result = mutableListOf<String>()
-    for(item in sorted) {
-      if (item.value == count) {
-        result.add(item.key)
-      }
-    }
-    return result
-  }
-}
+//data class Login(
+//  name: String,
+//  time: Long = Instant.now().epochSecond,
+//)
+//
+//class LeastActiveUserAnalyzer {
+//
+//  val logins = mutableListOf<Login>()
+//
+//  private fun dropExpired() {
+//    // drop those that expired(more than 24H)
+//    val expired = Instant.now().epochSecond - 24 * 60 * 60 // oldest epoch second that is yet to expire
+//    for(item in this.logins) {
+//      if(item.time < expired) {
+//        this.logins.remove(item)
+//      } else {
+//        break
+//      }
+//    }
+//  }
+//
+//  fun newUserLogin(name: String) {
+//    dropExpired()
+//    // add new login
+//    this.logins += Login(name)
+//  }
+//
+//  fun getLeastActiveUsers(): List<String> {
+//    dropExpired()
+//    val map = mutableMapOf<String, Int>()
+//    // count how many logins for each name
+//    for(item in this.logins) {
+//      map[item.name] = map.getOrDefault(item.name, 0) + 1
+//    }
+//    // sort the entry pair by count in ascending order
+//    val sorted: List<Entry<String, Int>> = map.entries.sortBy(it.value) // FIXME: O(n^2)
+//    val count = sorted[0].value
+//    val result = mutableListOf<String>()
+//    for(item in sorted) {
+//      if (item.value == count) {
+//        result.add(item.key)
+//      }
+//    }
+//    return result
+//  }
+//}

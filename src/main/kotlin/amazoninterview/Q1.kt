@@ -54,84 +54,83 @@ class Q1 {
 //I am looking for how we can easily add more rules without too much code change.
 
 
-
-data class Violation(
-  val message: String,
-)
-
-
-interface ViolationChecker {
-  /**
-  To check the given purchase object contains any violation.
-   */
-  fun check(purchase: Purchase): List<Violation>
-}
-
-object PaymentInstrumentChecker: ViolationChecker {
-  private val validType = setOf("CreditCard", "GiftCard")
-
-
-  /**
-  The payment instrument type must be valid.
-   */
-  override fun check(purchase: Purchase): List<Violation> {
-    if (null == purchase.getPaymentInstrument()) {
-      return listOf(Violation("Payment Instrument is required"))
-    }
-
-    if (null == purchase.getPaymentInstrument().getType()) {
-      return listOf(Violation("Payment Instrument type is required"))
-    }
-
-    if (!this.validType.contains(purchase.getPaymentInstrument().getType())) {
-      return listOf(Violation("The payment instrument type must be valid"))
-    }
-
-    return listOf()
-  }
-}
-
-object ItemsChecker: ViolationChecker {
-  /**
-  To check the given purchase object contains any violation.
-   */
-  override fun check(purchase: Purchase): List<Violation> {
-    if (null == purchase.getItems() || purchase.getItems().isEmpty()) {
-      return listOf(Violation("There must be at least one item in the purchase"))
-    }
-
-    return listOf()
-  }
-}
-
-object DeliveryAddressChecker: ViolationChecker {
-  /**
-  To check the given purchase object contains any violation.
-   */
-  override fun check(purchase: Purchase): List<Violation> {
-    if (null == purchase.getDeliveryAddressId() || purchase.getDeliveryAddressId().isBlank()) {
-      return listOf(Violation("The delivery address id must be set"))
-    }
-
-    return listOf()
-  }
-}
-
-object ViolationExecutor {
-  private val checkers = listOf(PaymentInstrumentChecker, ItemsChecker, DeliveryAddressChecker)
-
-  fun validate(purchase: Purchase): List<Violation> {
-    val result = mutableListOf<Violation>()
-    for (checker in this.checkers) {
-      result.addAll(checker.check(purchase))
-    }
-    return result
-  }
-}
-
-fun main() {
-  // ... 
-  val purchase = Purchase() // ...
-}
-
+//data class Violation(
+//  val message: String,
+//)
+//
+//
+//interface ViolationChecker {
+//  /**
+//  To check the given purchase object contains any violation.
+//   */
+//  fun check(purchase: Purchase): List<Violation>
+//}
+//
+//object PaymentInstrumentChecker: ViolationChecker {
+//  private val validType = setOf("CreditCard", "GiftCard")
+//
+//
+//  /**
+//  The payment instrument type must be valid.
+//   */
+//  override fun check(purchase: Purchase): List<Violation> {
+//    if (null == purchase.getPaymentInstrument()) {
+//      return listOf(Violation("Payment Instrument is required"))
+//    }
+//
+//    if (null == purchase.getPaymentInstrument().getType()) {
+//      return listOf(Violation("Payment Instrument type is required"))
+//    }
+//
+//    if (!this.validType.contains(purchase.getPaymentInstrument().getType())) {
+//      return listOf(Violation("The payment instrument type must be valid"))
+//    }
+//
+//    return listOf()
+//  }
+//}
+//
+//object ItemsChecker: ViolationChecker {
+//  /**
+//  To check the given purchase object contains any violation.
+//   */
+//  override fun check(purchase: Purchase): List<Violation> {
+//    if (null == purchase.getItems() || purchase.getItems().isEmpty()) {
+//      return listOf(Violation("There must be at least one item in the purchase"))
+//    }
+//
+//    return listOf()
+//  }
+//}
+//
+//object DeliveryAddressChecker: ViolationChecker {
+//  /**
+//  To check the given purchase object contains any violation.
+//   */
+//  override fun check(purchase: Purchase): List<Violation> {
+//    if (null == purchase.getDeliveryAddressId() || purchase.getDeliveryAddressId().isBlank()) {
+//      return listOf(Violation("The delivery address id must be set"))
+//    }
+//
+//    return listOf()
+//  }
+//}
+//
+//object ViolationExecutor {
+//  private val checkers = listOf(PaymentInstrumentChecker, ItemsChecker, DeliveryAddressChecker)
+//
+//  fun validate(purchase: Purchase): List<Violation> {
+//    val result = mutableListOf<Violation>()
+//    for (checker in this.checkers) {
+//      result.addAll(checker.check(purchase))
+//    }
+//    return result
+//  }
+//}
+//
+//fun main() {
+//  // ... 
+//  val purchase = Purchase() // ...
+//}
+//
 
