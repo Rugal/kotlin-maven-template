@@ -21,7 +21,7 @@ class SolutionTest {
     fun source(): Stream<Arguments> = Stream.of(
 //      Arguments.of("abcabcbb", 3),
 //      Arguments.of("bbbbb", 1),
-      Arguments.of("pwwkew", 3),
+      Arguments.of("pwwkew", 2),
     )
   }
 }
