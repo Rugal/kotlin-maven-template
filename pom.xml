@@ -21,11 +21,9 @@
     <!--
         dependency version
     -->
-    <clojure.version>1.12.0</clojure.version>
     <!--
         plugin version
     -->
-    <clojure.plugin.version>1.9.3</clojure.plugin.version>
   </properties>
 
   <dependencies>
@@ -35,7 +33,6 @@
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>clojure</artifactId>
-      <version>${clojure.version}</version>
     </dependency>
     <!-- 
       kotlin 
@@ -43,22 +40,18 @@
     <dependency>
       <groupId>org.jetbrains.kotlin</groupId>
       <artifactId>kotlin-stdlib</artifactId>
-      <version>${kotlin.version}</version>
     </dependency>
     <dependency>
       <groupId>org.jetbrains.kotlin</groupId>
       <artifactId>kotlin-reflect</artifactId>
-      <version>${kotlin.version}</version>
     </dependency>
     <dependency>
       <groupId>org.jetbrains.kotlin</groupId>
       <artifactId>kotlin-test-junit5</artifactId>
-      <version>${kotlin.version}</version>
     </dependency>
     <dependency>
       <groupId>org.jetbrains.kotlinx</groupId>
       <artifactId>kotlinx-coroutines-core</artifactId>
-      <version>1.8.0-RC2</version>
     </dependency>
     <dependency>
       <groupId>io.projectreactor.kotlin</groupId>
@@ -104,7 +97,6 @@
         <!-- lint -->
         <groupId>com.github.ozsie</groupId>
         <artifactId>detekt-maven-plugin</artifactId>
-        <version>${detekt.plugin.version}</version>
         <configuration>
           <autoCorrect>true</autoCorrect>
           <failBuildOnMaxIssuesReached>true</failBuildOnMaxIssuesReached>
@@ -128,7 +120,6 @@
       <plugin>
         <groupId>org.jetbrains.kotlin</groupId>
         <artifactId>kotlin-maven-plugin</artifactId>
-        <version>${kotlin.version}</version>
         <configuration>
           <args>
             <arg>-Xjsr305=strict</arg>
@@ -162,14 +153,11 @@
       <plugin>
         <groupId>com.theoryinpractise</groupId>
         <artifactId>clojure-maven-plugin</artifactId>
-        <version>${clojure.plugin.version}</version>
         <configuration>
-          <sourceDirectories>
-            <sourceDirectory>src/main/clojure</sourceDirectory>
-          </sourceDirectories>
-          <testSourceDirectories>
-            <testSourceDirectory>src/test/clojure</testSourceDirectory>
-          </testSourceDirectories>
+          <testDeclaredNamespaceOnly>true</testDeclaredNamespaceOnly>
+          <testNamespaces>
+            <testNamespace>singlenumber-test</testNamespace>
+          </testNamespaces>
         </configuration>
         <executions>
           <execution>
@@ -200,13 +188,6 @@
       -->
       <plugin>
         <artifactId>maven-surefire-plugin</artifactId>
-        <dependencies>
-          <dependency>
-            <groupId>me.fabriciorby</groupId>
-            <artifactId>maven-surefire-junit5-tree-reporter</artifactId>
-            <version>1.2.1</version>
-          </dependency>
-        </dependencies>
         <configuration>
           <argLine>""</argLine>
           <reportFormat>plain</reportFormat>
