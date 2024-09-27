@@ -1,5 +1,8 @@
 package coinchange
 
+/**
+ * https://leetcode.com/problems/coin-change/description/
+ */
 class Solution {
   fun coinChange(coins: IntArray, amount: Int): Int {
     val result = IntArray(amount + 1) { if (it > 0) Int.MAX_VALUE else 0 }

@@ -156,7 +156,7 @@
         <configuration>
           <testDeclaredNamespaceOnly>true</testDeclaredNamespaceOnly>
           <testNamespaces>
-            <testNamespace>twosum-test</testNamespace>
+            <testNamespace>coinchange-test</testNamespace>
           </testNamespaces>
         </configuration>
         <executions>

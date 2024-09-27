@@ -8,12 +8,11 @@ import org.junit.jupiter.params.provider.MethodSource
 
 class SolutionTest {
   private val s = Solution()
-  
+
   @MethodSource("source")
-  @ParameterizedTest(name = "Rugal")
-  fun test(coins: IntArray, amount: Int, expected: Int) {
+  @ParameterizedTest
+  fun test(coins: IntArray, amount: Int, expected: Int) =
     Assertions.assertEquals(expected, s.coinChange(coins, amount))
-  }
 
   companion object {
     @JvmStatic
