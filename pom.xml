@@ -156,7 +156,7 @@
         <configuration>
           <testDeclaredNamespaceOnly>true</testDeclaredNamespaceOnly>
           <testNamespaces>
-            <testNamespace>coinchange-test</testNamespace>
+            <testNamespace>mergestringsalternately-test</testNamespace>
           </testNamespaces>
         </configuration>
         <executions>
