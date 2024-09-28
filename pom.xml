@@ -156,7 +156,7 @@
         <configuration>
           <testDeclaredNamespaceOnly>true</testDeclaredNamespaceOnly>
           <testNamespaces>
-            <testNamespace>mergestringsalternately-test</testNamespace>
+            <testNamespace>greatest-common-divisor-of-strings-test</testNamespace>
           </testNamespaces>
         </configuration>
         <executions>
