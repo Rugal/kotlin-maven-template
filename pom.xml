@@ -156,7 +156,7 @@
         <configuration>
           <testDeclaredNamespaceOnly>true</testDeclaredNamespaceOnly>
           <testNamespaces>
-            <testNamespace>can-place-flowers-test</testNamespace>
+            <testNamespace>reverse-vowels-of-a-string-test</testNamespace>
           </testNamespaces>
         </configuration>
         <executions>
