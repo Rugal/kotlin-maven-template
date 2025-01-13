@@ -156,7 +156,7 @@
         <configuration>
           <testDeclaredNamespaceOnly>true</testDeclaredNamespaceOnly>
           <testNamespaces>
-            <testNamespace>string-compression-test</testNamespace>
+            <testNamespace>single-number-ii-test</testNamespace>
           </testNamespaces>
         </configuration>
         <executions>
